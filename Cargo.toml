@@ -1,0 +1,19 @@
+[package]
+name = "cloud-run-rust"
+version = "1.0.0"
+authors = ["maxday"]
+edition = "2021"
+
+[dependencies]
+actix-web = "4.3.1"
+
+[dev-dependencies]
+actix-rt = "2.8.0"
+actix-test = "0.1.1"
+
+[profile.release]
+opt-level = "z"
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
